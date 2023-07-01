@@ -6,7 +6,7 @@ const set_value = (e, v) => {
 document.querySelectorAll('input').forEach(e => {
     if (!filled.has(e.name)) {
         filled.add(e.name);
-        if (e.type !== 'hidden')
+        if (e.type === 'radio' || e.type === 'checkbox')
             e.click();
         if (e.type === 'text')
             set_value(e, '12345')
